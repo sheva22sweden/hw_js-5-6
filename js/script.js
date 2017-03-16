@@ -22,10 +22,10 @@ function Stopwatch(elem) {
 
   function timeFormatter(timeInMilliseconds) {
     var time = new Date(timeInMilliseconds);
-    var hours = time.getHours().toString();
-    var minutes = time.getMinutes().toString();
-    var seconds = time.getSeconds().toString();
-    var milliseconds = time.getMilliseconds().toString();
+    var hours = time.getUTCHours().toString();
+    var minutes = time.getUTCMinutes().toString();
+    var seconds = time.getUTCSeconds().toString();
+    var milliseconds = time.getUTCMilliseconds().toString();
 
     if (hours.length < 2) {
       hours = '0' + hours;
@@ -73,7 +73,7 @@ function Stopwatch(elem) {
   };
 }
 
-var timer = document.getElementById('timer');
+  var timer = document.getElementById('timer');
   var startBtn = document.getElementById('start');
   var resetBtn = document.getElementById('reset');
 
